@@ -3,7 +3,7 @@
 * @Date:   2017-02-18T12:08:00-05:00
 * @Email:  allen.flickinger@gmail.com
 * @Last modified by:   FuzzyStatic
-* @Last modified time: 2017-02-19T14:27:37-05:00
+* @Last modified time: 2017-02-19T17:19:51-05:00
  */
 
 package sort
@@ -68,6 +68,35 @@ func TestCountingSort(t *testing.T) {
 	t.Logf("Test count sort of %v", *slice3)
 	s3, _ := New(slice3)
 	s3.CountingSort()
+
+	if !reflect.DeepEqual(*slice3, sorted) {
+		t.Errorf("Expected slice of %v, but it was %v instead.", sorted, *slice3)
+	}
+}
+
+func TestInsertionSort(t *testing.T) {
+	slice1 := &[]int{9, 8, 7, 6, 5, 4, 3, 2, 1}
+	t.Logf("Test insertion sort of %v", *slice1)
+	s1, _ := New(slice1)
+	s1.InsertionSort()
+
+	if !reflect.DeepEqual(*slice1, sorted) {
+		t.Errorf("Expected slice of %v, but it was %v instead.", sorted, *slice1)
+	}
+
+	slice2 := &[]int{6, 5, 4, 4, 8, 7, 7, 2, 1}
+	t.Logf("Test insertion sort of %v", *slice2)
+	s2, _ := New(slice2)
+	s2.InsertionSort()
+
+	if !reflect.DeepEqual(*slice2, sorted2) {
+		t.Errorf("Expected slice of %v, but it was %v instead.", sorted2, *slice2)
+	}
+
+	slice3 := &[]int{9, 1, 8, 2, 7, 3, 6, 4, 5}
+	t.Logf("Test insertion sort of %v", *slice3)
+	s3, _ := New(slice3)
+	s3.InsertionSort()
 
 	if !reflect.DeepEqual(*slice3, sorted) {
 		t.Errorf("Expected slice of %v, but it was %v instead.", sorted, *slice3)
