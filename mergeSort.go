@@ -3,7 +3,7 @@
 * @Date:   2017-02-18T12:08:00-05:00
 * @Email:  allen.flickinger@gmail.com
 * @Last modified by:   FuzzyStatic
-* @Last modified time: 2017-02-18T13:10:51-05:00
+* @Last modified time: 2017-02-19T11:53:07-05:00
  */
 
 package sort
@@ -17,15 +17,15 @@ func (s *Sort) Merge(start, mid, end int) {
 	k := 0
 
 	for i := start; i <= end; i++ {
-		if p > mid { //checks if first part comes to an end or not
+		if p > mid { // Checks if first part comes to an end or not
 			sAux[k] = (*s.slice)[q]
 			k++
 			q++
-		} else if q > end { //checks if second part comes to an end or not
+		} else if q > end { // Checks if second part comes to an end or not
 			sAux[k] = (*s.slice)[p]
 			k++
 			p++
-		} else if (*s.slice)[p] < (*s.slice)[q] { //checks which part has smaller element
+		} else if (*s.slice)[p] < (*s.slice)[q] { // Checks which part has smaller element
 			sAux[k] = (*s.slice)[p]
 			k++
 			p++
@@ -46,9 +46,9 @@ func (s *Sort) Merge(start, mid, end int) {
 // MergeSort splits slice into two, sorts (or splits again) and merges the sorted slices
 func (s *Sort) MergeSort(start, end int) {
 	if start < end {
-		mid := (start + end) / 2 // defines the current array in 2 parts
-		s.MergeSort(start, mid)  // sort the 1st part of array
-		s.MergeSort(mid+1, end)  // sort the 2nd part of array
+		mid := (start + end) / 2 // Defines the current array in 2 parts
+		s.MergeSort(start, mid)  // Sort the 1st part of array
+		s.MergeSort(mid+1, end)  // Sort the 2nd part of array
 		s.Merge(start, mid, end)
 	}
 }
