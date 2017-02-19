@@ -3,7 +3,7 @@
 * @Date:   2017-02-18T12:28:32-05:00
 * @Email:  allen.flickinger@gmail.com
 * @Last modified by:   FuzzyStatic
-* @Last modified time: 2017-02-19T11:56:59-05:00
+* @Last modified time: 2017-02-19T14:24:23-05:00
  */
 
 package sort
@@ -12,10 +12,9 @@ package sort
 // counted and stored in an auxiliary array, by mapping its value as an index of the
 // auxiliary array.
 func (s *Sort) CountingSort() {
+	var k int
 
 	// First, find the maximum value in s.slice
-	k := 0
-
 	for _, v := range *s.slice {
 		if v > k {
 			k = v
