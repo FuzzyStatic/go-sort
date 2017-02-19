@@ -3,7 +3,7 @@
 * @Date:   2017-02-18T12:28:32-05:00
 * @Email:  allen.flickinger@gmail.com
 * @Last modified by:   FuzzyStatic
-* @Last modified time: 2017-02-19T11:52:24-05:00
+* @Last modified time: 2017-02-19T11:56:59-05:00
  */
 
 package sort
@@ -40,7 +40,7 @@ func (s *Sort) CountingSort() {
 
 	for i := 0; i <= k; i++ {
 		// Aux stores which element occurs how many times,
-		// Add i in sortedA[] according to the number of times i occured in A[]
+		// Add i in sorted according to the number of times i occured in s.slice
 		for tmp := sAux[i]; tmp > 0; tmp-- {
 			sorted[j] = i
 			j++
