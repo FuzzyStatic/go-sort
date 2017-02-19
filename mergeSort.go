@@ -3,7 +3,7 @@
 * @Date:   2017-02-18T12:08:00-05:00
 * @Email:  allen.flickinger@gmail.com
 * @Last modified by:   FuzzyStatic
-* @Last modified time: 2017-02-19T11:53:07-05:00
+* @Last modified time: 2017-02-19T11:55:56-05:00
  */
 
 package sort
@@ -43,7 +43,9 @@ func (s *Sort) Merge(start, mid, end int) {
 	}
 }
 
-// MergeSort splits slice into two, sorts (or splits again) and merges the sorted slices
+// MergeSort is a divide-and-conquer algorithm based on the idea of breaking down
+// a list into several sub-lists until each sublist consists of a single element and
+// merging those sublists in a manner that results into a sorted list.
 func (s *Sort) MergeSort(start, end int) {
 	if start < end {
 		mid := (start + end) / 2 // Defines the current array in 2 parts
