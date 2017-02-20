@@ -3,14 +3,14 @@
 * @Date:   2017-02-18T12:28:32-05:00
 * @Email:  allen.flickinger@gmail.com
 * @Last modified by:   FuzzyStatic
-* @Last modified time: 2017-02-19T14:24:23-05:00
+* @Last modified time: 2017-02-19T19:04:09-05:00
  */
 
 package sort
 
 // CountingSort the frequencies of distinct elements of the array to be sorted is
 // counted and stored in an auxiliary array, by mapping its value as an index of the
-// auxiliary array.
+// auxiliary array
 func (s *Sort) CountingSort() {
 	var k int
 
