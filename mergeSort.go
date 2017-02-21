@@ -3,13 +3,13 @@
 * @Date:   2017-02-18T12:08:00-05:00
 * @Email:  allen.flickinger@gmail.com
 * @Last modified by:   FuzzyStatic
-* @Last modified time: 2017-02-19T11:55:56-05:00
+* @Last modified time: 2017-02-20T22:00:16-05:00
  */
 
 package sort
 
-// Merge merges two slices by comparing their elements
-func (s *Sort) Merge(start, mid, end int) {
+// Merge two slices by comparing their elements
+func (s *Sort) merge(start, mid, end int) {
 	p := start
 	q := mid + 1
 
@@ -51,6 +51,6 @@ func (s *Sort) MergeSort(start, end int) {
 		mid := (start + end) / 2 // Defines the current array in 2 parts
 		s.MergeSort(start, mid)  // Sort the 1st part of array
 		s.MergeSort(mid+1, end)  // Sort the 2nd part of array
-		s.Merge(start, mid, end)
+		s.merge(start, mid, end)
 	}
 }
